@@ -1,0 +1,185 @@
+body{
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.navbar{
+    height: 12vh;
+    background-color: lightseagreen;
+    display: flex;
+}
+
+.ticket-container{
+    /* min-height: 88vh; min is given such that background color remains same when height is inc, by 88  ========== and scroll is given to the whole body  */
+    height: 88vh;
+    background-color: #b1b1b7;
+    position: relative;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; /* will not change the width of the tickets  ---- it will put tickets into new line.*/
+    overflow-y: auto;/* ---> will give div a scroll bar*/
+}
+.filter-container,
+.add-delete-container {
+    height: 8vh;
+    margin-top: 2vh;  /* 12-8 = 4 ko half half me divide kara so 2 vh diya hai margin top */
+    margin-left: 8vw;
+    border-radius: 3px;
+    background-color: #de918e;
+}
+
+.filter-container {
+    width: 18vw;
+    display: flex;
+}
+.heading {
+    width: 38vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b24937;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.add-delete-container {
+    width: 9vw;
+    display: flex;
+}
+.filter {
+    height: 100%;
+    width: 25%;
+}
+.royal-blue-color-btn,
+.yellow-color-btn,
+.brown-color-btn,
+.burlywood-color-btn {
+    display: block;
+    width: 40%;
+    height: 40%;
+    border-radius: 3px; 
+    margin-top: calc(8vh * 0.3);
+    margin-bottom: calc(8vh * 0.3);
+    margin-left: calc(4.5vw * 0.3);
+    margin-right: calc(4.5vw * 0.3);
+}
+
+.royal-blue-color-btn, .modal-royal-blue-filter, .ticket-color-royal-blue {
+    background-color: royalblue;
+}
+.yellow-color-btn, .modal-yellow-filter, .ticket-color-yellow {
+    background-color: yellow;
+}
+.brown-color-btn, .modal-brown-filter, .ticket-color-brown {
+    background-color: brown; 
+}
+.burlywood-color-btn, .modal-burlywood-filter, .ticket-color-burlywood {
+    background-color: burlywood;
+} 
+.filter:hover{
+    background-color: #fff;
+    cursor: pointer;
+}
+.filter.active {
+    background-color: #fff;
+}
+
+.add,.delete {
+    height: 100%;
+    width: 50%;
+}
+
+.action-btn {
+    display: block;
+    width: 40%;
+    height: 40%;
+    /* border-radius: 3px; */
+    margin-top: calc(8vh * 0.3);
+    margin-bottom: calc(8vh * 0.3);
+    margin-left: calc(4.5vw * 0.3);
+    margin-right: calc(4.5vw * 0.3);
+    background-color: #ff0080;
+    padding-left: 3%;
+}
+
+.add:hover, .delete:hover {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.modal{
+    box-shadow: 0px 0px 4px 5px burlywood; 
+        /* horizontal_offset vertical_offset blur spread_radius */
+    height: 18rem;
+    width: 35rem;
+    background-color: #fff;
+    display: flex;
+    position: absolute; /* will move to corner of its parent */
+    top: 10rem;
+    /* bottom: 0;
+    right: 0; */
+    left: calc((100vw - 35rem) / 2);
+}
+
+.task-to-be-added {
+    width: 70%;
+    height: 100%;
+    padding: 3rem; /* task ka written part thoda niche se shuru ho */
+    outline: none;  /* for removing that black line which comes when contenteditable */
+    overflow: auto; /* there was overflow in y direction, now when overflow occurs, scrollbar comes. */
+}
+
+.modal-priority-list {
+    display: flex;
+    flex-direction: column; /* it will be column wise aligned */
+    width: 30%;
+    height: 100%;
+    justify-content: space-between; /* will distribute equal space in b/w small boxes */
+    padding: 3rem;
+    background-color: #de918e;
+}
+
+.modal-filter {
+    width: 100%;
+    height: 20%;
+}
+.modal-filter:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.modal-filter.active{
+    border: 5px solid;
+}
+
+.ticket {
+    height: 9rem;
+    width: 16rem;
+    background-color: #fff;
+    margin-bottom: 15px;
+    /* margin: 0 auto 0 auto; */
+}
+
+.ticket-color {
+    height: 6%;
+    width: 100%;
+}
+
+.ticket-id{
+    height: 15%;
+    width: 100%;
+    padding: 3%;
+    color: aqua;
+}
+
+.task{
+    height: 79%;
+    width: 100%;
+    padding: 3%;
+}
+.ticket.active{
+    box-shadow: 0 0 3px 1px;
+}
